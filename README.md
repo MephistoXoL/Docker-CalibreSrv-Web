@@ -41,7 +41,7 @@ To enable it you must to add evironment varibles:
 ## Install
 Command line:
 ```
-docker run -d -p 8083:8083 -v /your/path/for/data:/config -v /your/path/for/Library:/books -v /your/path/for/Backup_Library:/Backup_Library -v /your/path/for/Books_Calibre:/Books_Calibre -v /your/path/for/Backup_Library:/Backup_Library mephistoxol/calibresrv_web
+docker run -d -p 8083:8083 -v /your/path/for/data:/config -v /your/path/for/Library:/books -v /your/path/for/Backup_Library:/Backup_Library -v /your/path/for/Books_Calibre:/Books_Calibre -v /your/path/for/Backup_Library:/Backup_Library  -e NOTIFICATIONS=enabled -e TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxx" -e CHATID="xxxxxxxxx" mephistoxol/calibresrv_web
 ```
 
 
