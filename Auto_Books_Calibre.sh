@@ -8,7 +8,7 @@ if [ "$(ls /Books_Calibre)" ]; then
     MsgTelegram="|---------------------------------------------------------|"
 	MsgTelegram=$MsgTelegram"%0A| Found Books to upload to Calibre |"
 	MsgTelegram=$MsgTelegram"%0A| "$(date)" |"
-	telegram_input -m "$MsgTelegram"
+	Telegram_input "$MsgTelegram"
 	date
 	echo "- Books to Add "
 	MsgTelegram=" - Books to Add %0A"
@@ -21,7 +21,7 @@ if [ "$(ls /Books_Calibre)" ]; then
 		echo $BookName
 		MsgTelegram=$MsgTelegram" · "$BookName"%0A "
 	done
-	telegram_input "$MsgTelegram"
+	Telegram_input "$MsgTelegram"
 	echo ""
         echo "-------------------------------------------------------------"
         echo " Adding Books to Calibre"
@@ -65,5 +65,5 @@ if [ "$(ls /Books_Calibre)" ]; then
 	MsgTelegram="| Process Complete "
 	MsgTelegram=$MsgTelegram"%0A| "$(date)" |"
 	MsgTelegram=$MsgTelegram"---------------------------------------------------------|"
-	telegram_input "$MsgTelegram" 2>/dev/null
+	Telegram_input "$MsgTelegram" 2>/dev/null
 fi
