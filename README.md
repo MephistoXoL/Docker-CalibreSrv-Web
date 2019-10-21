@@ -11,9 +11,9 @@ Ports exports:
 Volumes exports:
 - Data is located in ```/config```
 - Calibre library located in ```/books``` 
-- Books to upload in ```/Books_Calibre``` --- Mandatory to work Auto-Upload
-- Books Backup in ```/Books_Calibre_Backup``` --- Mandatory to work Auto-Upload
-- Library Backup in ```/Backup_Library``` --- Mandatory to work Auto-Upload 
+- Books to upload in ```/Books_Calibre``` --- Mandatory to run Auto-Upload
+- Books Backup in ```/Books_Calibre_Backup``` --- Mandatory to run Auto-Upload
+- Library Backup in ```/Backup_Library``` --- Mandatory to work run-Upload 
 
 ## Auto-Upload Script
 Follow volumes are mandatory to properly work:
@@ -33,10 +33,12 @@ After add and copy the books the script copy the library in this folder as a inc
 
 ### Notifications by Telegram
 Notifications powered by ```caronc/apprise```.
-To enable it you must to add evironment varibles:
+To enable it you must to add the below environment variables:
 - NOTIFICATIONS = enabled
 - TOKEN = Your Telegram Bot token
 - CHATID = Your Telegram Chat ID
+
+You can create the Telegram Bot from here
 
 ## Install
 Command line:
