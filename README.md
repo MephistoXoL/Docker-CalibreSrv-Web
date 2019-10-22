@@ -17,7 +17,8 @@ Volumes:
 - Library Backup in ```/Backup_Library``` --- Mandatory to work run-Add 
 
 ## Auto-Add Script
-Follow volumes are **mandatory** to properly work, I recommend mount them from NFS creating a NFS_VOLUME in Docker:
+Follow volumes are **mandatory** to properly work, 
+:bulb:I recommend mount them from NFS, creating as NFS_VOLUME in Docker:
 ``` 
 - /Books_Calibre (.epub format)
 - /Books_Calibre_Backup
@@ -25,10 +26,10 @@ Follow volumes are **mandatory** to properly work, I recommend mount them from N
 ```
 Cronjob will be created:
 
-```'0,15,30,45 * * * * /app/Auto_Books_Calibre.sh >> /Books_Calibre_Backup/01-Calibre.log 2>&1'```
+```0,15,30,45 * * * * /app/Auto_Books_Calibre.sh >> /Books_Calibre_Backup/01-Calibre.log 2>&1```
 
 #### Books_Calibre
-All books to Add must be located in this folder, **only .epub format**. 
+All books to Add to Calibre Library must be located in this folder, **only .epub format**. 
 
 :bulb: Optional: this folder can be mount from Nextcloud or similar.
 
@@ -114,6 +115,16 @@ Ansible:
         networks:
           - name: proxy-tier
       register: result
+```
+
+## TIPS
+- Keep clean the volume ```/your/path/for/Books_Calibre```.
+- All files in ```/your/path/for/Books_Calibre``` will are delete when Script Auto_Add finish.
+- Allow book conversion with the binary ```/usr/bin/ebook-convert```
+
+## Changelog
+```
+
 ```
 
 ## Donate
