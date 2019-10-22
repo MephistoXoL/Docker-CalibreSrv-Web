@@ -1,9 +1,10 @@
 ![Docker-Gitea](https://raw.githubusercontent.com/MephistoXoL/Docker-CalibreSrv-Web/master/Docker-Calibre.png)
 
 # Docker-CalibreSrv-Web
-Docker image for calibre-server UI &amp; Script to **auto-upload Books**  (epub format) and **Backup** with **Telegram notifications**.
+Docker image for calibre-server UI &amp; Script to **Auto-Add Books**  :book: to the Library (epub format) and **Backup** with :phone: **Telegram notifications**.
 
-This image is based on ```linuxserver/calibre-web``` with Calibre minimal install. Include a Script to auto-upload all books located in the folder ```/Books_Calibre``` and **incremental Backup** them and Library in ```/Books_Calibre_Backup & /Backup_Library```.
+
+This image is based on ```linuxserver/calibre-web``` with Calibre minimal install. Include a Script to Auto-Add all books located in the folder ```/Books_Calibre``` and make a **incremental Backup** of them and Library in ```/Books_Calibre_Backup & /Backup_Library```.
 
 Ports exports:
 - 8083 for webUI
@@ -11,11 +12,11 @@ Ports exports:
 Volumes:
 - Data is located in ```/config```
 - Calibre library located in ```/books``` 
-- Books to upload in ```/Books_Calibre``` --- Mandatory to run Auto-Upload
-- Books Backup in ```/Books_Calibre_Backup``` --- Mandatory to run Auto-Upload
-- Library Backup in ```/Backup_Library``` --- Mandatory to work run-Upload 
+- Books to Add in ```/Books_Calibre``` --- Mandatory to run Auto-Add
+- Books Backup in ```/Books_Calibre_Backup``` --- Mandatory to run Auto-Add
+- Library Backup in ```/Backup_Library``` --- Mandatory to work run-Add 
 
-## Auto-Upload Script
+## Auto-Add Script
 Follow volumes are **mandatory** to properly work, I recommend mount them from NFS creating a NFS_VOLUME in Docker:
 ``` 
 - /Books_Calibre (.epub format)
@@ -23,11 +24,13 @@ Follow volumes are **mandatory** to properly work, I recommend mount them from N
 - /Backup_Library
 ```
 Cronjob will be created:
+
 ```'0,15,30,45 * * * * /app/Auto_Books_Calibre.sh >> /Books_Calibre_Backup/01-Calibre.log 2>&1'```
 
 #### Books_Calibre
-All books to upload must be located in this folder, **only .epub format**. 
-Optional: this folder can be mount from Nextcloud or similar.
+All books to Add must be located in this folder, **only .epub format**. 
+
+:bulb: Optional: this folder can be mount from Nextcloud or similar.
 
 #### Books_Calibre_Backup
 The Script copy all .epub files in this folder as backup.
@@ -35,14 +38,16 @@ The Script copy all .epub files in this folder as backup.
 #### Backup_Library
 After add and copy the books the script copy the library in this folder as a incremental backup.
 
-### Telegram Notifications
+## Telegram Notifications
 Notifications powered by ```caronc/apprise```.
+
 To enable it you must to add the below environment variables:
 - NOTIFICATIONS = enabled
 - TOKEN = Your Telegram Bot token
 - CHATID = Your Telegram Chat ID
 
-You can create a Telegram Bot and get the Token from [here](https://core.telegram.org/bots#6-botfather)
+You can create a Telegram Bot and get the Token from [here](https://core.telegram.org/bots#6-botfather).
+
 To get CHATID send a message to the BOT and go to following url ```https://api.telegram.org/bot<YourBOTToken>/getUpdates```
 
 ## Install
