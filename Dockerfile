@@ -26,6 +26,6 @@ COPY Auto_Books_Calibre.sh /app/Auto_Books_Calibre.sh
 
 RUN chmod +x /app/Auto_Books_Calibre.sh
 
-VOLUME /books /config
+VOLUME /books /config /Books_Calibre /Books_Calibre_Backup /Backup_Library
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
