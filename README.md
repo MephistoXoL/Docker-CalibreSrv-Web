@@ -56,8 +56,8 @@ Command line:
 docker run -d --restart=always --name calibresrv_web -p 8083:8083 \
                                  -v /your/path/for/data:/config \
                                  -v /your/path/for/Library:/books \
-                                 -v /your/path/for/Backup_Library:/Backup_Library \
                                  -v /your/path/for/Books_Calibre:/Books_Calibre \
+                                 -v /your/path/for/Books_Calibre_Backup:/Books_Calibre_Backup
                                  -v /your/path/for/Backup_Library:/Backup_Library  \
                                  -e NOTIFICATIONS=enabled \
                                  -e TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
@@ -86,8 +86,8 @@ services:
     volumes:
       - /your/path/for/data:/config
       - /your/path/for/Library:/books
-      - /your/path/for/Backup_Library:/Backup_Library
       - /your/path/for/Books_Calibre:/Books_Calibre
+      - /your/path/for/Books_Calibre_Backup:/Books_Calibre_Backup
       - /your/path/for/Backup_Library:/Backup_Library
 ```
 Ansible:
@@ -98,8 +98,8 @@ Ansible:
         volumes:
           - /your/path/for/data:/config
           - /your/path/for/Library:/books
-          - /your/path/for/Backup_Library:/Backup_Library
           - /your/path/for/Books_Calibre:/Books_Calibre
+          - /your/path/for/Books_Calibre_Backup:/Books_Calibre_Backup
           - /your/path/for/Backup_Library:/Backup_Library
         env:
           NOTIFICATIONS: "enabled"
