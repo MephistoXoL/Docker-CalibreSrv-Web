@@ -15,6 +15,7 @@ RUN pip install apprise
 RUN apt-get -y purge python-pip python-setuptools python-wheel&& \
     apt-get -y autoremove && \
     apt-get clean && \
+    mkdir /Books_Calibre /Books_Calibre_Backup /Backup_Library && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
