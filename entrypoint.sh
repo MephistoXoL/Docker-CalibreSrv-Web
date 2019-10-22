@@ -13,9 +13,11 @@ echo "# CHATID = $CHATID"
 if [ "$NOTIFICATIONS" = "ENABLED" ]; then
         echo "# Adding Telegram info to Script..."
         sed -i 's,'"Telegram_input"','"apprise $TELEGRAM_MSG -b"',' $BOOKS_SCRIPT
-        echo "# Adding cronjob..."
-        echo '0,15,30,45 * * * * /app/Auto_Books_Calibre.sh >> /Books_Calibre_Backup/01-Calibre.log 2>&1' | crontab
 fi
+echo ""
+echo "# Adding cronjob..."
+echo '0,15,30,45 * * * * /app/Auto_Books_Calibre.sh >> /Books_Calibre_Backup/01-Calibre.log 2>&1' | crontab
+echo ""
 echo "###########################"
 echo "# Config completed        #"
 echo "###########################"
