@@ -8,11 +8,13 @@ NOTIFICATIONS=$(echo $NOTIFICATIONS | tr a-z A-Z)
 echo "###########################"
 echo "# Checking Notifications  #"
 echo "###########################"
-echo "# Token = $TOKEN"
-echo "# CHATID = $CHATID"
+echo ""
 if [ "$NOTIFICATIONS" = "ENABLED" ]; then
+        echo "Notifications enabled"
         echo "# Adding Telegram info to Script..."
         sed -i 's,'"Telegram_input"','"apprise $TELEGRAM_MSG -b"',' $BOOKS_SCRIPT
+        echo "# Token = $TOKEN"
+        echo "# CHATID = $CHATID"
 fi
 echo ""
 echo "# Adding cronjob..."
@@ -23,5 +25,4 @@ echo "# Config completed        #"
 echo "###########################"
 echo ""
 echo "# Starting Calibre-Web... "
-python3 /app/calibre-web/cps.py
-
+/init
