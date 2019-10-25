@@ -119,11 +119,14 @@ Ansible:
 - Keep clean the volume ```/your/path/for/Books_Calibre```.
 - All files in ```/your/path/for/Books_Calibre``` will are delete when Script Auto_Add finish.
 - Allow book conversion with the binary ```/usr/bin/ebook-convert```
-- To disable Telegram Notifications remove all environment variables from command line, Compose or Ansible code.
+- To disable Telegram Notifications remove Environment Variables from command line, Compose or Ansible code.
+- You can use Environment Variables from ```linuxserver/calibre-web```
+- Binary for conversion ```/usr/bin/ebook-convert```
 
 ## Changelog
 ```
-
+25-10-2019
+ - Initial Release
 ```
 
 ## Donate
