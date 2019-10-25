@@ -40,8 +40,6 @@ The Script copy all .epub files in this folder as backup.
 After add and copy the books the script copy the library in this folder as a incremental backup.
 
 ## Telegram Notifications
-Notifications powered by ```caronc/apprise```.
-
 To enable it you must to add the below environment variables:
 - NOTIFICATIONS = enabled
 - TOKEN = Your Telegram Bot token
