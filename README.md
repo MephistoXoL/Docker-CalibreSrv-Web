@@ -56,7 +56,7 @@ docker run -d --restart=always --name calibresrv_web -p 8083:8083 \
                                  -v /your/path/for/data:/config \
                                  -v /your/path/for/Library:/books \
                                  -v /your/path/for/Books_Calibre:/Books_Calibre \
-                                 -v /your/path/for/Books_Calibre_Backup:/Books_Calibre_Backup
+                                 -v /your/path/for/Books_Calibre_Backup:/Books_Calibre_Backup \
                                  -v /your/path/for/Backup_Library:/Backup_Library  \
                                  -e NOTIFICATIONS=enabled \
                                  -e TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
