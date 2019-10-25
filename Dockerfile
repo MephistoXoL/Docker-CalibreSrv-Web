@@ -1,6 +1,6 @@
 FROM linuxserver/calibre-web
 
-LABEL maintainer="XoL <MephistoXoL@gmail.com>" description="Calibre-Server UI with Calibre and auto-upload for books" version="armv7"
+LABEL maintainer="XoL <MephistoXoL@gmail.com>" description="Calibre-Server UI with Calibre and auto-upload for books" version="multi.arch"
 
 EXPOSE 8083
 
