@@ -129,6 +129,10 @@ Ansible:
  - Only check .epub files to start the script
 ```
 ```
+26-10-2019
+ - Fix error with entrypoint.sh
+```
+```
 25-10-2019
  - Initial Release
 ```
