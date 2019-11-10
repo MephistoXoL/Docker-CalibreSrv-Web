@@ -125,6 +125,10 @@ Ansible:
 
 ## Changelog
 ```
+10-11-2019
+ - Only check .epub files to start the script
+```
+```
 25-10-2019
  - Initial Release
 ```
