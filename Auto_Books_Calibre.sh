@@ -1,7 +1,7 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
 
-if [ "$(ls /Books_Calibre)" ]; then
+if [ "$(ls /Books_Calibre/*.epub 2>/dev/null)" ]; then
         URL="https://api.telegram.org/botTOKENBOT/sendMessage"
         APIARGS="chat_id=CHATIDBOT&text="
         echo "-------------------------------------------------------------"
